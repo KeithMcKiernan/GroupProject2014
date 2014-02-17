@@ -1,0 +1,948 @@
+/* =================================== *
+
+	0. IMPORTS
+
+	1. SETUP
+	- 1.1 DEFAULTS
+	- 1.2 HYPERLINKS
+	- 1.3 TYPOGRAPHY
+	- 1.4 FONT-FACE'S
+
+	2. STRUCTURE
+	- 2.1 CONTAINERS
+	- 2.2 NAVIGATION
+	- 2.3 HEADER
+	- 2.4 BREADCRUMBS
+	- 2.5 MAIN CONTENT
+	- 2.6 FOOTER
+
+	3. COMMENTS
+	- 3.1 COMMENTS
+	- 3.2 COMMENTS FORM
+
+	4. MESSAGES
+	- 4.1 MESSAGES
+	- 4.2 MESSAGES FORM
+
+	5. FORMS
+	- 5.1 FORMS
+	- 5.2 REGISTRATION FORM
+	- 5.3 LOGIN FORM
+	- 5.4 FORGOT PASSWORD FORM
+
+	6. MISC
+	- 6.1 MEDIA QUERIE'S
+
+ * =================================== */
+
+/* -------------------------------- *
+ * - 1.1 DEFAULTS
+ * -------------------------------- */
+
+
+html {
+	height: 100%;
+	font-size: 1em;
+}
+
+body { 
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	background-color: #F9F9F9; 
+	color: #333;
+	-webkit-font-smoothing: antialiased; 	/* Better Font Rendering */
+	height: 100%;
+	margin: 0;
+}
+
+
+/* ----------------------------------- *
+ * -	1.2 HYPERLINKS 		 
+ * ----------------------------------- */
+
+ a {
+ 	text-decoration: none;
+ }
+
+
+/* ----------------------------------- *
+ * - 1.4 FONT-FACE'S 
+ * ----------------------------------- */
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?-w7xl84');
+	src:url('fonts/icomoon.eot?#iefix-w7xl84') format('embedded-opentype'),
+		url('fonts/icomoon.woff?-w7xl84') format('woff'),
+		url('fonts/icomoon.ttf?-w7xl84') format('truetype'),
+		url('fonts/icomoon.svg?-w7xl84#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	-webkit-font-smoothing: antialiased; 	/* Better Font Rendering */
+	-moz-osx-font-smoothing: grayscale;	
+}
+
+
+/* --------------------------------------------------------------- *
+ *	Registration, Login, Password Recovery Form Styling
+ * --------------------------------------------------------------- */
+
+/* ----------------------------------- *
+ * - 5.1 FORMS 
+ * ----------------------------------- */
+
+
+form input { 
+	outline: none; 
+	border: 3px solid #2A8BCC; 
+} 
+
+.form-body { 
+	margin: 0 auto; 
+	max-width: 400px; 
+}
+
+.form-body form {
+	-moz-transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	
+	-moz-transition:0.7s;
+	-webkit-transition:0.7s;
+	transition:0.7s;
+}
+
+.form-body.flipped .preflip, .postflip {	
+	opacity:0;
+	
+	-moz-transform:rotateY(180deg);
+	-webkit-transform:rotateY(180deg);
+	transform:rotateY(180deg);
+}
+
+.form-body.flipped .postflip {	
+	opacity:1;
+	
+	-moz-transform:rotateY(0deg);
+	-webkit-transform:rotateY(0deg);
+	transform:rotateY(0deg);
+}
+
+.form-body.flippedfor .preflip {	
+	opacity:0;
+	
+	-moz-transform:rotateX(180deg);
+	-webkit-transform:rotateX(180deg);
+	transform:rotateX(180deg);
+}
+
+.form-body.flippedfor .forgotflip {	
+	opacity:1;
+	
+	-moz-transform:rotateY(0deg);
+	-webkit-transform:rotateY(0deg);
+	transform:rotateY(0deg);
+}
+
+
+/* ----------------------------------- *
+ * - 5.2 REGISTRATION FORM 
+ * ----------------------------------- */
+
+
+.registration-form, .login-form {
+	background-color: #FFF; 
+	max-width: 400px;
+	max-height: 470px;
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	z-index: 1000;
+	margin: auto;
+	padding: 10px 0;
+	border: 1px solid #F2F2F2;
+	-webkit-border-radius: 		5px;
+	-moz-border-radius: 		5px;
+	border-radius:  			5px;
+	-webkit-box-shadow: 		0 8px 6px -6px #E5E5E5;
+	-moz-box-shadow: 			0 8px 6px -6px #E5E5E5;
+	box-shadow: 				0 8px 6px -6px #E5E5E5;
+}
+
+.registration-form > h1 {
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-size: 18px;
+	text-align: center;
+	color: #666;
+	padding-bottom: 22px;
+	border-bottom: 1px solid #F2F2F2;
+}
+
+.registration-form 
+input[type="text"], input[type="password"] {
+	background-color: #F9F9F9;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 10px 0 0;
+	padding: 10px 14px 12px 14px;
+	font-size: 15px;
+	color: #838383;
+	border: 3px solid #E9E9E9;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: 		border-box;
+	box-sizing: 				border-box;
+}
+
+.registration-form 
+input[type="text"]:focus {
+	border: 3px solid #2A8BCC;
+}
+
+.registration-form
+input[type="password"]:focus {
+	border: 3px solid #2A8BCC;
+}
+
+.registration-form 
+input[type="checkbox"] {
+	clear: both;
+	content: "\e600";
+	border-left: 3px solid #E5E5E5;
+	display: block;
+	border: none;
+	-webkit-appearance: none;
+}
+
+.registration-form 
+input[type="checkbox"]:checked {
+	content: "\e600";
+	color: #2a8bcc;
+}
+
+.registration-form 
+input[type="submit"] {
+	padding: 0;
+}
+
+.registration-form .icon-eye:before {
+	content: "\e600";
+}
+
+.registration-form .icon-eye {
+	position: absolute;
+	top: 16px;
+	width: 29px;
+	height: 29px;
+	font-size: 20px;
+	line-height: 29px;
+	text-align: center;
+	right: 8px;
+	color: #CCC;
+	cursor: pointer;
+	z-index: 1000;
+	text-decoration: none;
+}
+
+.registration-form .input {
+	position: relative;
+	display: block;
+}
+
+.registration-form > fieldset {
+	display: block;	
+	margin: 15px 30px;
+	height: auto;
+	border: none;
+}
+
+.registration-form > fieldset > .half-width-input {
+	width: 47%;
+	float: left;
+}
+
+.registration-form > fieldset > .half-width-input-right {
+	width: 47%;
+	float: right;
+}
+
+.registration-form > .full-width-line {
+	width: 100%;
+	border-bottom: 1px dashed #F2F2F2;
+}
+
+.registration-form .text-label {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.registration-form .text-label a {
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	color: #666;
+	text-decoration: none;
+}
+
+.registration-form .text-label a:hover {
+	color: #2a8bcc;
+	text-decoration: underline;
+}
+
+/* ----- Registration Form Errors ----- */
+
+.registration-error {
+	font-size: 12px;
+	color: white;
+	position: absolute;
+	top: 220px;
+	left: 20px;
+	border-radius: 2px;
+	padding: 10px;
+	background: red;
+	z-index: 9000;
+}
+
+.error-studentid { top: 438px; left: 240px; }
+.error-password { top: 326px; left: 200px; }
+.error-email { top: 270px; left: 270px; }
+.error-username { top: 214px; left: 280px; }
+
+/* HTML5 Validation */
+
+#field-container {
+	display: block;
+	position: relative;
+ }
+
+ .popover {
+	display: none;
+	position: absolute;
+	font-size: 14px;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	z-index: 100;
+	top: 11px;
+	left: 102%;
+	width: 180px;
+	padding: 10px 6px 10px 5px;
+	color: #FFF;
+	background-color: #999;
+	border-radius: 2px;
+}
+
+.popover:before {
+	content: "";
+	position: relative;
+	display: inline-block;
+	float: left;
+	margin: 5px 10px 5px -17px;
+	border: solid 6px;
+	border-color: transparent #999 transparent transparent;
+}
+
+input:focus {
+	outline: none;
+}
+
+input:focus + .popover {
+	display: inline-block;
+}
+
+input:required:valid, input:required:focus:invalid { 
+	background-repeat: no-repeat;
+	background-position: 95%;
+	background-size: 16px;
+}
+
+input:required:valid {
+	background-image: url('public/images/checkmark.svg');
+}
+
+input:required:focus:invalid {
+	background-image: url('public/images/warning.svg');
+}
+
+input:invalid:required {
+	background-image: url('public/images/asterick.svg');
+	background-size: 10px;
+	background-repeat: no-repeat;
+	background-position: 94%;
+}
+
+/* ----------------------------------- *
+ * - 5.3 LOGIN FORM
+ * ----------------------------------- */
+
+
+.login-form {
+	max-height: 305px;
+}
+
+.forgot-form {
+	max-height: 240px;
+}
+
+.forgotflip {	
+	opacity: 0;
+	z-index: 1;
+	
+	-moz-transform:rotateX(180deg);
+	-webkit-transform:rotateX(180deg);
+	transform:rotateX(180deg);
+}
+
+
+/* --------------------------- *
+ *		Button Styling 
+ * --------------------------- */
+
+#show-login { background: #FFF; padding: 5px 20px; }
+
+.flat-button {
+	background: #3498DB;
+	width: 100%;
+	height: 50px;
+	border-radius: 2px;
+	position: relative;
+	vertical-align: top;
+	padding: 0;
+	font-size: 18px;
+	color: white;
+	cursor: pointer;
+	text-align: center; 
+	border: 0;
+	-webkit-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	-moz-text-shadow:0 1px 2px rgba(0, 0, 0, 0.25);
+	text-shadow:0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.flat-button:active {
+	top: 1px;
+	outline: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.flat-button-small {
+	width: 25%;
+	font-size: 14px;
+	margin-left: 32px;
+	margin-top: 10px;
+}
+
+.button-margin {
+	margin-bottom: 40px;
+}
+
+/* Temp Files For Member Area */
+
+.sidebar-menu {
+	position: fixed;
+	background: #333437;
+	float: left;
+}
+
+.sidebar-menu-vertical {
+	top: 0;
+	left: 0;
+	width: 280px;
+	height: 100%;
+	float: left;
+	z-index: 9000;
+}
+
+.sidebar-top {
+	width: 100%;
+}
+
+.sidebar-top a {
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+.sidebar-right {
+	width: 220px;
+	height: 100px;
+	margin-top: 80px;
+	margin-left: 260px;
+	border: 1px solid #F2F2F2;
+	padding: 20px 10px;
+	float: right;
+	background: #FFF;
+}
+
+.main-content {
+	width: 48%;
+	margin-top: 100px;
+	margin-left: 230px;
+	border: 1px solid #F2F2F2;
+	padding: 20px 10px;
+	float: left;
+	background: #FFF;
+	position: relative;
+}
+
+.content-right {
+	width: 24%;
+	margin-top: 100px;
+	border: 1px solid #F2F2F2;
+	padding: 20px 10px;
+	float: right;
+	background: #FFF;
+}
+
+.main-content-index {
+	width: 78%;
+	margin-top: 30px;
+	margin-left: 230px;
+	border: 1px solid #F2F2F2;
+	padding: 20px 10px;
+	float: left;
+	background: #FFF;
+	position: relative;
+}
+
+.container {
+	width: 1130px;
+	height: 100%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.main-content .input-field {
+	background-color: #F9F9F9;
+	width: 100%;
+	height: 100%;
+	margin: 10px 0 0;
+	padding: 14px 14px 14px 14px;
+	font-size: 13px;
+	color: #838383;
+	border-radius: 2px;
+	border: 1px solid #F5F5F5;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: 		border-box;
+	box-sizing: 				border-box;
+}
+
+.full-width-line-1 {
+	width: 100%;
+	height: 1px;
+	border-bottom: 1px solid #E5E5E5;
+	margin: 15px 0;
+}
+
+.top-bar {
+	width: 100%;
+	height: 70px;
+	background: #FFF;
+	z-index: 2000;
+	position: fixed;
+	box-shadow: 1px 1px #F2F2F2;
+}
+
+.top-bar:before, .top-bar:after {
+	display: table;
+	content: " ";
+}
+
+.links-right {
+	float: right;
+	padding: 6.5px 0;
+}
+
+.links-right ul li {
+	list-style: none;
+	display: inline;
+	color: #999;
+}
+
+.links-right a {
+	color: #999;
+	text-decoration: none;
+}
+
+.links-right-button {
+	margin-left: 20px;
+}
+
+.main-content fieldset {
+	border: none;
+	margin: 0 20px;
+}
+
+.account-heading {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#textarea {
+	height: 150px;
+}
+
+/* -------------------------- *
+ * - Sliding Left Menu
+ * -------------------------- */
+
+#slide-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin-left: 0;
+	width: 270px;
+	height: 100%;
+	background: #2D2F2F;
+	color: #FFF;
+	overflow-y: auto;
+	z-index: 9000;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-weight: 100;
+	font-size: 1em;
+}
+
+.navigation {
+	list-style: none;
+	position: absolute;
+	top: 0;
+	width: 270px;
+	margin: 0;
+	padding: 0;
+	text-indent: 20px;
+	line-height: 30px;
+	font-size: 1em;
+}
+
+.navigation li:first-child {
+	font-size: 1.5em;
+	text-indent: 0;
+}
+
+.navigation li:first-child a {
+	padding: 0;
+}
+
+.navigation li:first-child a:hover { border: 0; background: none; }
+
+.center { text-align: center; }
+
+.sidebar-avatar {
+	padding: 20px 0 5px 0;
+}
+
+.navigation li:first-child .edit-profile {
+	text-transform: none;
+	padding-bottom: 10px;
+	font-size: 14px;
+}
+
+.navigation li {
+	border-bottom: 1px dashed #3A3A3A;
+}
+
+.navigation li a {
+	color: #999;
+	display: block;
+	padding: 10px 0;
+	text-decoration: none;
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+}
+
+.navigation li a:hover {
+	color: #FFF;
+	background: #2A2A2A;
+	text-decoration: none;
+	border-left: 6px solid #2A8BCC;
+}
+
+.navigation li a:active, .navigation li a:focus {
+	text-decoration: none
+}
+
+.pull-right {
+	float: right;
+}
+
+.sidebar-notification {
+	margin-left: 20px;
+	border-radius: 3px;
+	background: #3498DB;
+	text-align: center;
+	padding: 0 6px;
+	font-size: 0.8em;
+	color: #FFF;
+}
+
+#push {
+	display: none;
+}
+
+.avatar {
+	width: 80px;
+	height: 80px;
+	margin-top: 0;
+	border: 3px solid #3A3A3A;
+	text-indent: 0;
+	text-align: center;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;	
+}
+
+.one-half, .two-halves {
+	width: 47%;
+}
+
+.one-half { 	float: left; }
+.two-halves { float: right; }
+
+/* ---- Page Loader ---- */
+
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('public/images/img-loader.gif') 50% 50% no-repeat rgb(249,249,249);
+}
+
+/* ----- Notifications / Errors Member Area ----- */
+
+.errors {
+	padding: 10px;
+	margin: 10px 25px;
+	color: #FFF;
+	background: #F5310B;
+	position: relative;
+	text-align: center;
+	text-shadow: 0 0.1em 0 rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+}
+
+.success {
+	padding: 10px;
+	margin: 10px 25px;
+	color: #FFF;
+	background: #91c76f;
+	position: relative;
+	text-align: center;
+	text-shadow: 0 0.1em 0 rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+}
+
+a.notification-close-success, a.notification-close-error  {
+	padding: 2px 9px 5px 9px;
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: normal;
+	color: #FFF;
+	text-shadow: 0 0.1em 0 rgba(0, 0, 0, 0.2);
+}
+
+a.notification-close-success {
+	background: #7bbc52;
+}
+
+a.notification-close-error {;
+	background: #FF401B;
+}
+
+#container {
+	margin-bottom: 20px;
+	height: 100%;
+}
+
+
+/* Font awesome overwrite */
+
+.fa-2x, .fa-1-5x {
+	color: #A1A1A1;
+}
+
+.sidebar-fa {
+	display: inline;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin-right: 10px;
+}
+
+.fa-1-5x {
+	font-size: 1.5em;
+}
+
+/* ----------------------------------- *
+ * 		6.1 MEDIA QUERIE'S
+ * ----------------------------------- */
+
+/* -------------------------- *
+ *  Screens Below 768px 	
+ * -------------------------- */
+
+
+@media only screen and (max-width: 768px) {
+
+	body { position: relative; left: 0; overflow-x: hidden; }
+	
+	.registration-form { max-width: 450px; }
+
+	#slide-menu { margin-left: -270px; }
+
+	#push {
+		display: block;
+		margin-left: 12px;
+		cursor: pointer;
+		right: 0;
+		left: 0;
+		bottom: 20px;
+		position: absolute;
+		width: 150px;
+	}
+
+	.container { width: 98%;  }
+
+	.main-content { margin-left: 1%; margin-right: 1%; width: 98%; margin-top: 80px; padding: 0; }
+	
+	.content-right { margin-left: 1%; margin-right: 1%; width: 94%; margin-top: 20px;}
+}
+
+
+/* -------------------------- *
+ *  Screens Below 320px 	
+ * -------------------------- */
+
+
+@media only screen and (max-width: 320px) {
+
+	body { position: relative; left: 0; overflow-x: hidden; }
+
+	.form-body {
+		margin: 20px auto;
+	}
+	
+	.registration-form { max-width: 300px; }
+
+	.registration-form > fieldset {
+		margin: 15px 0;
+	}
+
+	#push {
+		display: block;
+		cursor: pointer;
+		right: 0;
+		left: 0;
+		bottom: 20px;
+		position: absolute;
+	}
+
+	.links-right { margin-right: 0; }
+
+	.links-right-buttons { padding-right: 0; }
+
+	.container { width: 96%; }
+
+	.main-content, .content-right { margin-left: 1%; margin-right: 1%; width: 98%; margin-top: 80px; padding: 0; }
+
+	.content-right { margin-left: 1%; margin-right: 1%; width: 98%; margin-top: 20px;}
+
+	.main-content .input-field-split-1, 
+	.main-content .input-field-split-2  {
+		width: 100%;
+	}
+
+	.flat-button-small { width: 75%; }
+
+}
+
+
+
+/* Smartphones (portrait and landscape) ----------- */
+
+/*@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+
+}*/
+
+/* Smartphones (landscape) ----------- */
+
+/*@media only screen and (min-width : 321px) {
+
+}*/
+
+/* Smartphones (portrait) ----------- */
+
+/*@media only screen 
+and (max-width : 320px) {
+
+}*/
+
+/* iPads (portrait and landscape) ----------- */
+
+/*@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+
+}*/
+
+/* iPads (landscape) ----------- */
+
+/*@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+
+}*/
+
+/* iPads (portrait) ----------- */
+
+/*@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+
+}*/
+
+/* Desktops and laptops ----------- */
+
+/*@media only screen 
+and (min-width : 1224px) {
+
+}*/
+
+/* Large screens ----------- */
+
+/*@media only screen 
+and (min-width : 1824px) {
+
+}*/
+
+/* iPhone 4 ----------- */
+
+/*@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+
+}*/
+
+
