@@ -24,7 +24,7 @@
       	else {
 
 			$firstname 	= mysqli_real_escape_string( $connection, $_POST['firstname'] );
-			$lastname  = mysqli_real_escape_string( $connection, $_POST['lastname'] );
+			$lastname  	= mysqli_real_escape_string( $connection, $_POST['lastname'] );
 			$student  	= mysqli_real_escape_string( $connection, $_POST['studentid'] );
 			$location  	= mysqli_real_escape_string( $connection, $_POST['location'] );
 			$bio  		= mysqli_real_escape_string( $connection, $_POST['bio'] );
@@ -38,10 +38,10 @@
 				$_SESSION['firstname'] 	= $_POST['firstname'];
 				$_SESSION['lastname'] 	= $_POST['lastname'];
 				$_SESSION['studentID'] 	= $_POST['studentid'];
-				$_SESSION['location'] 		= $_POST['location'];
+				$_SESSION['location'] 	= $_POST['location'];
 				$_SESSION['email'] 		= $_POST['email'];
-				$_SESSION['bio'] 			= $_POST['bio'];
-				$_SESSION['avatar'] 		= $_FILES['avatar'];
+				$_SESSION['bio'] 		= $_POST['bio'];
+				$_SESSION['avatar'] 	= $_FILES['avatar'];
 
 				//  Show success message
 				header('Location: member_area.php?success');
@@ -65,7 +65,7 @@
 		$imageType 		= $_FILES['avatar']['type'];
 
 		$imagePath 		= $uploadAvatarDirectory . $imageName;
-		$result 				= move_uploaded_file( $tempName, $imagePath );
+		$result 		= move_uploaded_file( $tempName, $imagePath );
 
 		$uploadAvatar = mysqli_query( $connection, "UPDATE members SET avatar = '" . $imagePath . "'  WHERE member_id = '". $_SESSION['id'] . "'"); 
 
