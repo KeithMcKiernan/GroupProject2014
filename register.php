@@ -10,14 +10,14 @@
 	$username	= mysqli_real_escape_string( $connection, $_POST['username'] );
 	$email		= mysqli_real_escape_string( $connection, $_POST['email'] );
 	$firstname 	= mysqli_real_escape_string( $connection, $_POST['firstname'] );
-	$lastname  = mysqli_real_escape_string( $connection, $_POST['lastname'] );
-	$studentid  = mysqli_real_escape_string( $connection, $_POST['studentid'] );
+	$lastname  	= mysqli_real_escape_string( $connection, $_POST['lastname'] );
+	$studentid  	= mysqli_real_escape_string( $connection, $_POST['studentid'] );
 	$password 	= mysqli_real_escape_string( $connection, $_POST['password'] );
-	$password_hash = md5($password);
+	$password_hash 	= md5($password);
 
 	$checkUsername 	= mysqli_query( $connection, "SELECT * FROM members WHERE username = '" . $username . "'") or die(mysqli_error());
-	$checkEmail 		= mysqli_query( $connection, "SELECT * FROM members WHERE email = '" . $email . "'") or die(mysqli_error());
-	$checkStudentID 	= mysqli_query( $connection, "SELECT * FROM members WHERE member_login = '" . $studentid . "'") or die(mysqli_error());
+	$checkEmail 	= mysqli_query( $connection, "SELECT * FROM members WHERE email = '" . $email . "'") or die(mysqli_error());
+	$checkStudentID = mysqli_query( $connection, "SELECT * FROM members WHERE member_login = '" . $studentid . "'") or die(mysqli_error());
 
 	// Check if the user already exists in the database
 	if (mysqli_num_rows($checkUsername) > 0) {
