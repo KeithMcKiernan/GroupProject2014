@@ -13,10 +13,10 @@
 
 <!DOCTYPE html>
 
-	<!-- [if lt IE 7]> 		<html class="no-js lt-ie9 lt-ie8 lt-ie7"> 	<![endif]-->
-	<!-- [if IE 7]> 		<html class="no-js lt-ie9 lt-ie8"> 			<![endif]-->
-	<!-- [if IE 8]> 		<html class="no-js lt-ie9"> 				<![endif]-->
-	<!-- [if gt IE 8]> --> 	<html class="no-js" > 						<!-- <![endif]-->
+    <!-- [if lt IE 7]> 		<html class="no-js lt-ie9 lt-ie8 lt-ie7"> 	<![endif]-->
+    <!-- [if IE 7]> 		<html class="no-js lt-ie9 lt-ie8"> 			<![endif]-->
+    <!-- [if IE 8]> 		<html class="no-js lt-ie9"> 				<![endif]-->
+    <!-- [if gt IE 8]> --> 	<html class="no-js" > 						<!-- <![endif]-->
 
 	<head>
 		<meta charset="utf-8" />
@@ -37,4 +37,22 @@
 	</head>
  
 	<body>
-	<!-- <div id="container"> -->
+		<header>
+			<nav class="top-bar">
+				<div class="container">
+					<div id="push"><i class="fa fa-bars fa-1-5x"></i></div>
+					<div class="links-right">
+					<ul>
+					<?php if ( isset($_SESSION['loggedIn']) ) { ?>
+						<li>Welcome, <a href="index.php?=newsfeed"><?php echo $_SESSION['firstname'] ?></a></li>
+						<li><a class="links-right-button" href="logout.php"><i class="fa fa-power-off"></i></a></li>
+					<?php } 
+
+					else {  ?>
+						<li><a href="login.php">Login</a> or <a href="index.php">Register</a></li>
+					<?php } ?>
+					</ul>
+					</div><!-- / .links-right end -->
+				</div><!-- / .container end -->
+			</nav>
+		</header>
